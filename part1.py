@@ -78,9 +78,6 @@ def print_label(title):
 
 
 def plot_reconstruction_error(k_values, reconstruction_errors):
-    """
-    Plot reconstruction error vs. k using the style hinted in PlottingCode.py.
-    """
     plt.figure()
     plt.plot(k_values, reconstruction_errors, marker='o')
     plt.title('Reconstruction Error vs. k')
@@ -88,7 +85,11 @@ def plot_reconstruction_error(k_values, reconstruction_errors):
     plt.ylabel('Reconstruction Error')
     plt.xticks(np.arange(1, 21, 1))
     plt.grid(True)
-    plt.tight_layout()
+    
+    # Save the plot (THIS is the important part)
+    plt.savefig("reconstruction_error_plot.png")
+    
+    # Still try to show it
     plt.show()
 
 
